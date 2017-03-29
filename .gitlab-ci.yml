@@ -1,9 +1,8 @@
 build_image:
-  image: docker:git
+  image: docker:1.12
   services:
-  - docker:dind
+  - docker:1.12-dind
   script:
-    - echo $CI_BUILD_TOKEN
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN reg.devlodge.de
     - docker build -t reg.devlodge.de/mario/docker-esp32 .
     - docker push reg.devlodge.de/mario/docker-esp32
