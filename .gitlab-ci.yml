@@ -6,5 +6,5 @@ build_image:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN reg.devlodge.de
     - docker build -t reg.devlodge.de/mario/docker-esp32 .
     - docker push reg.devlodge.de/mario/docker-esp32
-only:
+  only:
     - master
