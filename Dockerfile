@@ -1,6 +1,8 @@
 FROM base/devel
 
-WORKDIR ~/Projects/esp
+ENV HOME /root
+
+WORKDIR $HOME/Projects/esp
 RUN pacman --noconfirm -Syu && \
     pacman --noconfirm -S wget git && \
     wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz && \
