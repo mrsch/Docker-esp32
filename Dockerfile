@@ -6,9 +6,9 @@ RUN pacman --noconfirm -Syu && \
     wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz && \
     tar -xzf xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz && \
     rm xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz && \
-    git clone --recursive https://github.com/espressif/esp-idf.git && \
-    echo export PATH=$PATH:$HOME/Projects/esp/xtensa-esp32-elf/bin >> .bashrc && \
-    echo export IDF_PATH=~/Projects/esp/esp-idf >> .bashrc
+    git clone --recursive https://github.com/espressif/esp-idf.git
+ENV PATH "$PATH:$HOME/Projects/esp/xtensa-esp32-elf/bin"
+ENV IDF_PATH "$HOME/Projects/esp/esp-idf"
     
 
 
